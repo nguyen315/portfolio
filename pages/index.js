@@ -5,13 +5,18 @@ import {
   Button,
   Heading,
   Image,
-  useColorModeValue
+  List,
+  Link,
+  ListItem,
+  useColorModeValue,
+  Icon
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import Layout from '../components/layouts/article'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
+import { IoLogoGithub } from 'react-icons/io'
 
 const Page = () => {
   return (
@@ -89,6 +94,25 @@ const Page = () => {
             <BioYear>2022 - Present</BioYear>
             Work at Kobiton Vietnam
           </BioSection>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            On the web
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href="https://github.com/nguyen315" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoGithub} />}
+                >
+                  @nguyen315
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
         </Section>
       </Container>
     </Layout>
