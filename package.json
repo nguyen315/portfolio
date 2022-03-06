@@ -1,5 +1,5 @@
 {
-  "name": "hiccup-portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "@emotion/styled": "^11.8.1",
     "framer-motion": "^6.2.8",
     "next": "^12.1.0",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1"

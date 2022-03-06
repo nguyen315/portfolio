@@ -4,7 +4,7 @@ import Layout from '../components/layouts/article'
 const Posts = () => {
   return (
     <Layout>
-      <Container>
+      <Container maxW="container.lg">
         <Heading as="h3" fontSize={20} mb={4}>
           Posts
         </Heading>

@@ -11,22 +11,36 @@ import {
   useColorModeValue,
   Icon
 } from '@chakra-ui/react'
-import Section from '../components/section'
-import Paragraph from '../components/paragraph'
-import Layout from '../components/layouts/article'
+import styled from '@emotion/styled'
+import Section from '@components/section'
+import Paragraph from '@components/paragraph'
+import Layout from '@components/layouts/article'
+import { BioSection, BioYear } from '@components/bio'
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { BioSection, BioYear } from '../components/bio'
 import { IoLogoGithub } from 'react-icons/io'
+
+const LinkIcon = styled(Link)`
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+  &:hover {
+    top: -2px;
+  }
+  &:active,
+  &:focus {
+    box-shadow: none;
+  }
+`
 
 const Page = () => {
   return (
     <Layout>
-      <Container>
+      <Container maxW="container.lg">
         <Box
           borderRadius="lg"
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           p={3}
-          mb={6}
+          my={6}
           align="center"
         >
           Hello, I&apos;m a full-stack developer based in Vietnam!
@@ -38,6 +52,16 @@ const Page = () => {
               Nguyen Ho
             </Heading>
             <p> A developer love to learn new things</p>
+            <Box>
+              <LinkIcon href="https://github.com/nguyen315" target="_blank">
+                <Icon
+                  w={6}
+                  h={6}
+                  as={IoLogoGithub}
+                  color={useColorModeValue('teal.500', 'teal.200')}
+                />
+              </LinkIcon>
+            </Box>
           </Box>
 
           <Box
@@ -66,7 +90,7 @@ const Page = () => {
           <Paragraph>
             Nguyen is a full-stack developer based in Ho Chi Minh with a passion
             for building digital services/stuff. Currently, he is a software
-            developer working on NodeJS and ReactJS
+            developer working on NodeJS and ReactJS.
           </Paragraph>
           <Box align="center" my={4}>
             <NextLink href="/works">
