@@ -5,7 +5,7 @@ const Posts = () => {
   return (
     <Layout>
       <Container maxW="container.lg">
-        <Heading as="h3" fontSize={20} mb={4}>
+        <Heading as="h3" fontSize={20} my={6}>
           Posts
         </Heading>
       </Container>

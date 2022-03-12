@@ -6,7 +6,7 @@ const Works = () => {
   return (
     <Layout title="Works">
       <Container maxW="container.lg">
-        <Heading as="h3" fontSize="26" mb={4}>
+        <Heading as="h3" size="lg" my={6}>
           Works
         </Heading>
         <Projects />
