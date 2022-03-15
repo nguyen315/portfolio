@@ -1,7 +1,8 @@
 import { Container, Heading } from '@chakra-ui/react'
-import Layout from '@components/layouts/article'
 import { getAllPostIds, getPostById } from '@lib/posts'
+import Layout from '@components/layouts/article'
 import Date from '@components/date'
+import MDXWrapper from '@components/mdx-wrapper'
 
 export const getStaticPaths = () => {
   const paths = getAllPostIds()
@@ -29,8 +30,10 @@ const Post = ({ post }) => {
         <Heading as="h3" size="lg" my={6}>
           {post.title}
         </Heading>
-        <div dangerouslySetInnerHTML={{ __html: post.contentHtml }}></div>
-        <Date dateString={post.date}/>
+        <Date dateString={post.date} />
+        <MDXWrapper>
+          <div dangerouslySetInnerHTML={{ __html: post.contentHtml }}></div>
+        </MDXWrapper>
       </Container>
     </Layout>
   )
