@@ -13,7 +13,7 @@ import { FiFolder } from 'react-icons/fi'
 import { IoLogoGithub } from 'react-icons/io'
 
 const Wrapper = styled(Flex)`
-  transition: transform ease 0.5s;
+  transition: transform ease 0.2s;
   &:hover {
     transform: translate(0, -2px);
   }

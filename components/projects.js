@@ -16,6 +16,13 @@ const Projects = () => {
           github="https://github.com/nguyen315/MoneyKeeper"
           techs={['React Native', 'MySQL']}
         />
+        <ProjectItem
+          title="HCMUS Forum"
+          description="A school project, in which I collaborate in team of 5 people. We make an forum website about our school.
+            We develop the project by NextJS with headless CMS Strapi for backend."
+          github="https://github.com/k18-hcmus/wiki-hcmus/"
+          techs={['NextJS', 'Strapi']}
+        />
       </SimpleGrid>
     </>
   )
