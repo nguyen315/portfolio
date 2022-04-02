@@ -19,9 +19,16 @@ const Projects = () => {
         <ProjectItem
           title="HCMUS Forum"
           description="A school project, in which I collaborate in team of 5 people. We make an forum website about our school.
-            We develop the project by NextJS with headless CMS Strapi for backend."
+            We develop the project by NextJS with headless CMS Strapi for backend"
           github="https://github.com/k18-hcmus/wiki-hcmus/"
           techs={['NextJS', 'Strapi']}
+        />
+        <ProjectItem
+          title="Class Management system"
+          description="A class management system development with ReactJS & NodeJS"
+          github="https://github.com/k18-hcmus/classroom-client"
+          href="https://classroom-nnn-ck.herokuapp.com/home"
+          techs={['ReactJS', 'NodeJS', 'MUI']}
         />
       </SimpleGrid>
     </>

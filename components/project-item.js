@@ -6,10 +6,11 @@ import {
   Icon,
   Link,
   Text,
-  useColorModeValue
+  useColorModeValue,
+  Stack
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { FiFolder } from 'react-icons/fi'
+import { FiFolder, FiExternalLink } from 'react-icons/fi'
 import { IoLogoGithub } from 'react-icons/io'
 
 const Wrapper = styled(Flex)`
@@ -56,13 +57,22 @@ const ProjectItem = ({ title, description, github, href, techs }) => {
             color={useColorModeValue('teal.500', 'teal.200')}
           />
         </Box>
-        <LinkIcon
-          href={github}
-          target="_blank"
-          color={useColorModeValue('black', 'white')}
-        >
-          <Icon w={7} h={7} as={IoLogoGithub}></Icon>
-        </LinkIcon>
+        <Stack direction="row" spacing={3}>
+          <LinkIcon
+            href={href}
+            color={useColorModeValue('black', 'white')}
+            target="_blank"
+          >
+            <Icon w={7} h={7} as={FiExternalLink}></Icon>
+          </LinkIcon>
+          <LinkIcon
+            href={github}
+            target="_blank"
+            color={useColorModeValue('black', 'white')}
+          >
+            <Icon w={7} h={7} as={IoLogoGithub}></Icon>
+          </LinkIcon>
+        </Stack>
       </Flex>
 
       <Box>
