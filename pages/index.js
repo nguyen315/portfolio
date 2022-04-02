@@ -22,10 +22,13 @@ import { IoLogoGithub } from 'react-icons/io'
 const LinkIcon = styled(Link)`
   position: relative;
   top: 0;
-  transition: top ease 0.5s;
-  &:hover {
-    top: -2px;
+  &:hover svg {
+    transform: translate(0, -2px);
   }
+  & svg {
+    transition: transform ease 0.5s;
+  }
+
   &:active,
   &:focus {
     box-shadow: none;
@@ -93,7 +96,7 @@ const Page = () => {
             developer working on NodeJS and ReactJS.
           </Paragraph>
           <Box align="center" my={4}>
-            <NextLink href="/works">
+            <NextLink href="/works" passHref>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
                 My portfolio
               </Button>

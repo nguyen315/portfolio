@@ -13,11 +13,9 @@ import { FiFolder } from 'react-icons/fi'
 import { IoLogoGithub } from 'react-icons/io'
 
 const Wrapper = styled(Flex)`
-  position: relative;
-  top: 0;
-  transition: top ease 0.5s;
+  transition: transform ease 0.5s;
   &:hover {
-    top: -2px;
+    transform: translate(0, -2px);
   }
 
   &:hover a#title {
