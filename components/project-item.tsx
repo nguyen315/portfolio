@@ -14,9 +14,9 @@ import { IoLogoGithub } from 'react-icons/io'
 import type { Theme } from '@chakra-ui/react'
 
 const Wrapper = styled(Flex)`
-  transition: transform ease 0.2s;
+  transition: transform ease 0.5s;
   &:hover {
-    transform: translate(0, -2px);
+    transform: translate(0, -5px);
   }
 
   &:hover a#title {
@@ -76,6 +76,7 @@ const ProjectItem = ({
             href={href}
             color={useColorModeValue('black', 'white')}
             target="_blank"
+            display={href ? '' : 'none'}
           >
             <Icon w={7} h={7} as={FiExternalLink}></Icon>
           </LinkIcon>
