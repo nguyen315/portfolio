@@ -1,3 +1,4 @@
+import React from 'react'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 
@@ -7,7 +8,12 @@ const variants = {
   exit: { opacity: 0, x: 0, y: 20 }
 }
 
-const Layout = ({ children, title }) => (
+export interface LayoutProps {
+  children: React.ReactNode,
+  title?: string
+}
+
+const Layout = ({ children, title }: LayoutProps) => (
   <motion.article
     initial="hidden"
     animate="enter"

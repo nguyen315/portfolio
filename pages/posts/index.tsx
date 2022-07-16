@@ -10,9 +10,10 @@ import Layout from '@components/layouts/article'
 import { getSortedPostsData } from '@lib/posts'
 import NextLink from 'next/link'
 import Date from '@components/date'
+import { Post } from '@lib/posts'
 
 export async function getStaticProps() {
-  const sortedPosts = getSortedPostsData()
+  const sortedPosts: Post[] = getSortedPostsData()
 
   return {
     props: {
@@ -21,7 +22,7 @@ export async function getStaticProps() {
   }
 }
 
-const Posts = ({ posts }) => {
+const Posts = ({ posts }: { posts: Post[] }) => {
   const renderPostsList = posts.map(post => {
     const { date, id, title, summary } = post
     return (

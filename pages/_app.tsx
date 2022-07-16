@@ -1,10 +1,12 @@
+import * as React from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '@components/layouts/main'
 import Fonts from '@components/fonts'
 import theme from '@lib/theme'
 import { AnimatePresence } from 'framer-motion'
+import type { AppProps } from 'next/app'
 
-const Website = ({ Component, pageProps, router }) => {
+const Website = ({ Component, pageProps, router }: AppProps) => {
   return (
     <ChakraProvider theme={theme}>
       <Fonts />

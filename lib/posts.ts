@@ -5,11 +5,18 @@ import { remark } from 'remark'
 import html from 'remark-html'
 
 const POST_DIRECTORY = path.join(process.cwd(), 'content')
+export interface Post {
+  id: string,
+  title?: string,
+  date?: string,
+  summary?: string,
+  contentHtml?: string
+}
 
 export function getSortedPostsData() {
   const fileNames = fs.readdirSync(POST_DIRECTORY)
 
-  const allPostsData = fileNames.map(fileName => {
+  const allPostsData: Post[] = fileNames.map(fileName => {
     // remove the .md path of fileName to get id of a post
     const id = fileName.replace(/\.md$/, '')
 
@@ -24,10 +31,14 @@ export function getSortedPostsData() {
     }
   })
 
-  return allPostsData.sort(({ date: a }, { date: b }) => {
-    if (a < b) return 1
-    if (a === b) return 0
-    if (a > b) return -1
+  return allPostsData.sort((a, b) => {
+    if (!a.date || !b.date) {
+      return 0
+    }
+    if (a.date < b.date) return 1
+    if (a.date === b.date) return 0
+    if (a.date > b.date) return -1
+    return 0
   })
 }
 
@@ -61,7 +72,7 @@ export function getAllPostIds() {
   })
 }
 
-export async function getPostById(id) {
+export async function getPostById(id: string): Promise<Post> {
   const fullPath = path.join(POST_DIRECTORY, `${id}.md`)
 
   const content = fs.readFileSync(fullPath, 'utf8')

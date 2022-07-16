@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import {
   Box,
   Flex,
@@ -12,6 +11,7 @@ import {
 import styled from '@emotion/styled'
 import { FiFolder, FiExternalLink } from 'react-icons/fi'
 import { IoLogoGithub } from 'react-icons/io'
+import type { Theme } from '@chakra-ui/react'
 
 const Wrapper = styled(Flex)`
   transition: transform ease 0.2s;
@@ -20,8 +20,8 @@ const Wrapper = styled(Flex)`
   }
 
   &:hover a#title {
-    color: ${({ theme }) =>
-      useColorModeValue(theme.colors.teal['500'], theme.colors.teal['200'])};
+    color: ${({ theme }: { theme?: Theme }) =>
+      useColorModeValue(theme?.colors.teal['500'], theme?.colors.teal['200'])};
     text-decoration: none;
   }
 `
@@ -38,7 +38,21 @@ const LinkIcon = styled(Link)`
   }
 `
 
-const ProjectItem = ({ title, description, github, href, techs }) => {
+export interface ProjectItemProps {
+  title: string
+  description: string
+  github: string
+  href?: string
+  techs: string[]
+}
+
+const ProjectItem = ({
+  title,
+  description,
+  github,
+  href,
+  techs
+}: ProjectItemProps) => {
   return (
     <Wrapper
       bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
@@ -99,14 +113,6 @@ const ProjectItem = ({ title, description, github, href, techs }) => {
       </Box>
     </Wrapper>
   )
-}
-
-ProjectItem.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  github: PropTypes.string.isRequired,
-  href: PropTypes.string,
-  techs: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default ProjectItem

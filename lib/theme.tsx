@@ -2,7 +2,7 @@ import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 
 const styles = {
-  global: props => ({
+  global: (props: React.ComponentProps<any>) => ({
     body: {
       bg: mode('#F7F7F7', '#202023')(props),
       overflow: 'overlay',
@@ -38,17 +38,17 @@ const components = {
         marginBottom: 4
       },
       'post-title': {
-        fontFamily: "var(--chakra-fonts-body)"
+        fontFamily: 'var(--chakra-fonts-body)'
       }
     }
   },
   Link: {
-    baseStyle: props => ({
+    baseStyle: (props: React.ComponentProps<any>) => ({
       color: mode('#3d7aed', '#ff63d3')(props),
       textUnderlineOffset: 3
     }),
     variants: {
-      'list-item': props => ({
+      'list-item': (props: React.ComponentProps<any>) => ({
         color: mode('#000', '#fff')(props),
         _hover: {
           textDecoration: 'none'

@@ -1,5 +1,5 @@
 import { Container, Heading } from '@chakra-ui/react'
-import { getAllPostIds, getPostById } from '@lib/posts'
+import { getAllPostIds, getPostById, Post } from '@lib/posts'
 import Layout from '@components/layouts/article'
 import Date from '@components/date'
 import MDXWrapper from '@components/mdx-wrapper'
@@ -12,7 +12,11 @@ export const getStaticPaths = () => {
   }
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({
+  params
+}: {
+  params: { id: string }
+}) => {
   const { id } = params
   const post = await getPostById(id)
 
@@ -23,7 +27,7 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
-const Post = ({ post }) => {
+const Post = ({ post }: { post: Post }) => {
   return (
     <Layout title={post.title}>
       <Container maxW="container.lg">
@@ -32,7 +36,9 @@ const Post = ({ post }) => {
         </Heading>
         <Date dateString={post.date} />
         <MDXWrapper>
-          <div dangerouslySetInnerHTML={{ __html: post.contentHtml }}></div>
+          <div
+            dangerouslySetInnerHTML={{ __html: post.contentHtml as string }}
+          ></div>
         </MDXWrapper>
       </Container>
     </Layout>

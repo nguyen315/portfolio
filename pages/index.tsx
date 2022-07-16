@@ -18,6 +18,7 @@ import Layout from '@components/layouts/article'
 import { BioSection, BioYear } from '@components/bio'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { IoLogoGithub } from 'react-icons/io'
+import React from 'react'
 
 const LinkIcon = styled(Link)`
   position: relative;
@@ -44,7 +45,6 @@ const Page = () => {
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           p={3}
           my={6}
-          align="center"
         >
           Hello, I&apos;m a full-stack developer based in Vietnam!
         </Box>
@@ -71,7 +71,6 @@ const Page = () => {
             flexShrink={0}
             mt={{ base: 4, md: 0 }}
             ml={{ md: 6 }}
-            align="center"
           >
             <Image
               borderColor="whiteAlplha.800"
@@ -95,7 +94,7 @@ const Page = () => {
             for building digital services/stuff. Currently, he is a software
             developer working on NodeJS and ReactJS.
           </Paragraph>
-          <Box align="center" my={4}>
+          <Box my={4}>
             <NextLink href="/works" passHref>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
                 My portfolio
