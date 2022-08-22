@@ -9,17 +9,21 @@ const styles = {
       fallbacks: [{ overflow: 'auto' }]
     },
     '.mdx-prose': {
+      fontSize: 'xl',
+      lineHeight: '1.4',
       h1: {
         fontSize: '1.5em',
-        my: '4',
+        my: '5',
         fontWeight: 'bold'
       },
       p: {
-        fontSize: 'md',
-        lineHeight: '1.4'
+        marginBottom: '30px'
       },
       a: {
         color: '#539FBF'
+      },
+      code: {
+        backgroundColor: mode('#091e4214', '#424345')(props)
       }
     }
   })

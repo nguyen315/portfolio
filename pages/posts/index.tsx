@@ -29,7 +29,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
       <ListItem key={id}>
         <NextLink href={`/posts/${id}`} passHref>
           <Link variant="list-item">
-            <Heading as="h5" size="md">
+            <Heading as="h5" size="md" variant="post-title">
               {title}
             </Heading>
           </Link>

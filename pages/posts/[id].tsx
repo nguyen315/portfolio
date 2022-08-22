@@ -31,7 +31,7 @@ const Post = ({ post }: { post: Post }) => {
   return (
     <Layout title={post.title}>
       <Container maxW="container.lg">
-        <Heading as="h3" size="lg" my={6} variant="post-title">
+        <Heading as="h1" size="2xl" my={6} variant="post-title">
           {post.title}
         </Heading>
         <Date dateString={post.date} />
