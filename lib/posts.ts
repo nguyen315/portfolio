@@ -6,10 +6,11 @@ import html from 'remark-html'
 
 const POST_DIRECTORY = path.join(process.cwd(), 'content')
 export interface Post {
-  id: string,
-  title?: string,
-  date?: string,
-  summary?: string,
+  id: string
+  title?: string
+  date?: string
+  updatedDate?: string
+  summary?: string
   contentHtml?: string
 }
 

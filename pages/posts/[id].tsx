@@ -1,4 +1,4 @@
-import { Container, Heading } from '@chakra-ui/react'
+import { Container, Heading, Text } from '@chakra-ui/react'
 import { getAllPostIds, getPostById, Post } from '@lib/posts'
 import Layout from '@components/layouts/article'
 import Date from '@components/date'
@@ -34,7 +34,9 @@ const Post = ({ post }: { post: Post }) => {
         <Heading as="h1" size="2xl" my={6} variant="post-title">
           {post.title}
         </Heading>
-        <Date dateString={post.date} />
+        <Text>
+          Last updated at <Date dateString={post.updatedDate} />
+        </Text>
         <MDXWrapper>
           <div
             dangerouslySetInnerHTML={{ __html: post.contentHtml as string }}

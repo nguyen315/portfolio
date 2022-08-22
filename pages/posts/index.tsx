@@ -24,7 +24,7 @@ export async function getStaticProps() {
 
 const Posts = ({ posts }: { posts: Post[] }) => {
   const renderPostsList = posts.map(post => {
-    const { date, id, title, summary } = post
+    const { updatedDate, id, title, summary } = post
     return (
       <ListItem key={id}>
         <NextLink href={`/posts/${id}`} passHref>
@@ -34,8 +34,8 @@ const Posts = ({ posts }: { posts: Post[] }) => {
             </Heading>
           </Link>
         </NextLink>
-        <Text>
-          <Date dateString={date} />
+        <Text fontSize="sm">
+          Last updated at <Date dateString={updatedDate} />
         </Text>
         <Text>{summary}</Text>
       </ListItem>
