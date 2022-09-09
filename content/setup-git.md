@@ -8,7 +8,8 @@ summary: 'Cách mình setup git trên một môi trường mới để thuận t
 #### Username và email
 
 ```
-git config --global user.name "<name>" && git config --global user.email "<email>"
+git config --global user.name "<name>" && \
+git config --global user.email "<email>"
 ```
 
 #### Push only the branch you are now working on
@@ -35,5 +36,6 @@ git config --global fetch.prune true
 #### Không fast-forward trong lúc merge
 
 ```
-git config --global --add merge.ff false && git config --global --add pull.ff only
+git config --global --add merge.ff false && \
+git config --global --add pull.ff only
 ```

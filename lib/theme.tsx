@@ -32,6 +32,16 @@ const styles = {
         borderRadius: '0.375rem',
         fontSize: '16px',
         padding: '0.1em 0.25em'
+      },
+      pre: {
+        backgroundColor: mode('#091e4214', '#424345')(props),
+        borderRadius: '0.5rem',
+        padding: '0.5em',
+        marginBottom: '0.5em',
+        code: {
+          backgroundColor: 'transparent',
+          padding: '0'
+        }
       }
     }
   })
