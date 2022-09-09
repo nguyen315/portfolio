@@ -16,6 +16,11 @@ const styles = {
         fontWeight: 'bold',
         my: '5'
       },
+      h4: {
+        fontSize: '1.1em',
+        fontWeight: 'bold',
+        my: '2'
+      },
       p: {
         marginBottom: '30px'
       },
