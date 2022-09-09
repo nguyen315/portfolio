@@ -13,8 +13,8 @@ const styles = {
       lineHeight: '1.4',
       h1: {
         fontSize: '1.5em',
-        my: '5',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        my: '5'
       },
       p: {
         marginBottom: '30px'
@@ -23,7 +23,10 @@ const styles = {
         color: '#539FBF'
       },
       code: {
-        backgroundColor: mode('#091e4214', '#424345')(props)
+        backgroundColor: mode('#091e4214', '#424345')(props),
+        borderRadius: '0.375rem',
+        fontSize: '16px',
+        padding: '0.1em 0.25em'
       }
     }
   })
