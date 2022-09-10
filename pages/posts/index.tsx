@@ -11,6 +11,7 @@ import { getSortedPostsData } from '@lib/posts'
 import NextLink from 'next/link'
 import Date from '@components/date'
 import { Post } from '@lib/posts'
+import Tags from '@components/tag'
 
 export async function getStaticProps() {
   const sortedPosts: Post[] = getSortedPostsData()
@@ -24,7 +25,7 @@ export async function getStaticProps() {
 
 const Posts = ({ posts }: { posts: Post[] }) => {
   const renderPostsList = posts.map(post => {
-    const { updatedDate, id, title, summary } = post
+    const { updatedDate, id, title, summary, tags } = post
     return (
       <ListItem key={id}>
         <NextLink href={`/posts/${id}`} passHref>
@@ -37,6 +38,9 @@ const Posts = ({ posts }: { posts: Post[] }) => {
         <Text fontSize="sm">
           Last updated at <Date dateString={updatedDate} />
         </Text>
+        {tags?.map(tag => {
+          return <Tags name={tag} key={tag} />
+        })}
         <Text>{summary}</Text>
       </ListItem>
     )

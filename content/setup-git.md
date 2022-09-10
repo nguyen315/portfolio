@@ -3,6 +3,7 @@ title: 'Cách mình setup git cho công việc'
 date: '09/09/2022'
 updatedDate: '09/09/2022'
 summary: 'Cách mình setup git trên một môi trường mới để thuận tiện cho các thao tác cơ bản như push, pull, fetch,...'
+tags: ['git', 'setup']
 ---
 
 #### Username và email

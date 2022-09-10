@@ -3,6 +3,7 @@ import { getAllPostIds, getPostById, Post } from '@lib/posts'
 import Layout from '@components/layouts/article'
 import Date from '@components/date'
 import MDXWrapper from '@components/mdx-wrapper'
+import Tags from '@components/tag'
 
 export const getStaticPaths = () => {
   const paths = getAllPostIds()
@@ -28,15 +29,19 @@ export const getStaticProps = async ({
 }
 
 const Post = ({ post }: { post: Post }) => {
+  const { title, tags } = post
   return (
-    <Layout title={post.title}>
+    <Layout title={title}>
       <Container maxW="container.lg">
         <Heading as="h1" size="2xl" my={6} variant="post-title">
-          {post.title}
+          {title}
         </Heading>
         <Text>
           Last updated at <Date dateString={post.updatedDate} />
         </Text>
+        {tags?.map(tag => {
+          return <Tags key={tag} name={tag} fontSize="1em" />
+        })}
         <MDXWrapper>
           <div
             dangerouslySetInnerHTML={{ __html: post.contentHtml as string }}

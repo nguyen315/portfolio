@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
+import { TagName } from '@lib/tags'
 
 const POST_DIRECTORY = path.join(process.cwd(), 'content')
 export interface Post {
@@ -12,6 +13,7 @@ export interface Post {
   updatedDate?: string
   summary?: string
   contentHtml?: string
+  tags?: TagName[]
 }
 
 export function getSortedPostsData() {
