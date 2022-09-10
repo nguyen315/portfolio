@@ -6,6 +6,7 @@ summary: 'Cách mình setup git trên một môi trường mới để thuận t
 tags: ['git', 'setup']
 ---
 
+![alt text for screen readers](https://res.cloudinary.com/nguyen315/image/upload/v1662820790/git_t9jl9h.png "Text to show on mouseover")
 #### Username và email
 
 ```
@@ -40,3 +41,5 @@ git config --global fetch.prune true
 git config --global --add merge.ff false && \
 git config --global --add pull.ff only
 ```
+
+---
