@@ -7,7 +7,8 @@ const styles = {
       bg: mode('#F7F7F7', '#202023')(props),
       overflow: 'overlay',
       fallbacks: [{ overflow: 'auto' }],
-      '--transition-func': 'cubic-bezier'
+      '--transition-func': 'cubic-bezier',
+      '--link-hover': '#2f3ab2'
     },
     '.mdx-prose': {
       fontSize: 'xl',
