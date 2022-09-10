@@ -19,6 +19,9 @@ const StyledLink = styled(Link)`
   &:hover {
     color: var(--link-hover);
   }
+  &:focus {
+    box-shadow: none;
+  }
 `
 
 export async function getStaticProps() {
