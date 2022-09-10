@@ -69,14 +69,19 @@ const components = {
   Link: {
     baseStyle: (props: React.ComponentProps<any>) => ({
       color: mode('#3d7aed', '#ff63d3')(props),
-      textUnderlineOffset: 3
+      textUnderlineOffset: 3,
+      _focus: {
+        boxShadow: 'none'
+      }
     }),
     variants: {
       'list-item': (props: React.ComponentProps<any>) => ({
         color: mode('#000', '#fff')(props),
         _hover: {
-          textDecoration: 'none'
-        }
+          textDecoration: 'none',
+          color: 'var(--link-hover)'
+        },
+        transition: 'all 100ms var(--transition-func)'
       })
     }
   }

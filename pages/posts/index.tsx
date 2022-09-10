@@ -12,17 +12,6 @@ import NextLink from 'next/link'
 import Date from '@components/date'
 import { Post } from '@lib/posts'
 import Tags from '@components/tag'
-import styled from '@emotion/styled'
-
-const StyledLink = styled(Link)`
-  transition: all 100ms var(--transition-func);
-  &:hover {
-    color: var(--link-hover);
-  }
-  &:focus {
-    box-shadow: none;
-  }
-`
 
 export async function getStaticProps() {
   const sortedPosts: Post[] = getSortedPostsData()
@@ -40,11 +29,11 @@ const Posts = ({ posts }: { posts: Post[] }) => {
     return (
       <ListItem key={id}>
         <NextLink href={`/posts/${id}`} passHref>
-          <StyledLink variant="list-item">
+          <Link variant="list-item">
             <Heading as="h5" size="md" variant="post-title">
               {title}
             </Heading>
-          </StyledLink>
+          </Link>
         </NextLink>
         <Text fontSize="sm">
           Last updated at <Date dateString={updatedDate} />
