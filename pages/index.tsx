@@ -87,7 +87,7 @@ const Page = () => {
           </Heading>
           <Paragraph>
             Nguyen is a full-stack developer based in Ho Chi Minh with a passion
-            for building digital services/stuff. Currently, I&apos;m a software
+            for building software crafts. Currently, I&apos;m a software
             developer working on NodeJS and ReactJS.
           </Paragraph>
           <Box my={4}>

@@ -14,25 +14,31 @@ export interface Post {
   summary?: string
   contentHtml?: string
   tags?: TagName[]
+  isDraft?: boolean
 }
 
 export function getSortedPostsData() {
   const fileNames = fs.readdirSync(POST_DIRECTORY)
 
-  const allPostsData: Post[] = fileNames.map(fileName => {
-    // remove the .md path of fileName to get id of a post
-    const id = fileName.replace(/\.md$/, '')
+  const allPostsData: Post[] = fileNames.reduce(
+    (filterPosts: Post[], fileName: string): Post[] => {
+      // remove the .md path of fileName to get id of a post
+      const id = fileName.replace(/\.md$/, '')
 
-    const filePath = path.join(POST_DIRECTORY, fileName)
-    const fileData = fs.readFileSync(filePath, 'utf8')
+      const filePath = path.join(POST_DIRECTORY, fileName)
+      const fileData = fs.readFileSync(filePath, 'utf8')
 
-    const frontmatter = matter(fileData)
-
-    return {
-      id,
-      ...frontmatter.data
-    }
-  })
+      const frontmatter = matter(fileData)
+      if (!frontmatter.data.isDraft) {
+        filterPosts.push({
+          id,
+          ...frontmatter.data
+        })
+      }
+      return filterPosts
+    },
+    []
+  )
 
   return allPostsData.sort((a, b) => {
     if (!a.date || !b.date) {
