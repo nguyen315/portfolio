@@ -5,7 +5,10 @@ export interface StyledListItemProps {
   children: React.ReactNode
 }
 
-export const StyledListItem = (props: StyledListItemProps) => {
+export const StyledListItem = (
+  props: StyledListItemProps & React.ComponentProps<typeof ListItem>
+) => {
+  const { children, ...restProps } = props
   return (
     <ListItem
       _before={{
@@ -17,8 +20,9 @@ export const StyledListItem = (props: StyledListItemProps) => {
       style={{
         textIndent: 0
       }}
+      {...restProps}
     >
-      {props.children}
+      {children}
     </ListItem>
   )
 }

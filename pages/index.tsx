@@ -9,7 +9,8 @@ import {
   Link,
   ListItem,
   useColorModeValue,
-  Icon
+  Icon,
+  Text
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import Section from '@components/section'
@@ -52,14 +53,12 @@ const Page = () => {
 
         <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
-            <Heading as="h2" variant="page-title">
+            <Heading as="h2" variant="page-title" mb={4}>
               Nguyen Ho
             </Heading>
-            <p>
-              Hello! My name is Nguyen, I&apos;m a developer love to learn new
-              things
-            </p>
-            <Box>
+            <Text>A developer love to learn new things</Text>
+
+            <Box mt={2}>
               <LinkIcon href="https://github.com/nguyen315" target="_blank">
                 <Icon
                   w={6}
@@ -90,10 +89,27 @@ const Page = () => {
             Work
           </Heading>
           <Paragraph>
-            Nguyen is a full-stack developer based in Ho Chi Minh with a passion
+            I&apos;m a full-stack developer based in Ho Chi Minh with a passion
             for building software crafts. Currently, I&apos;m a software
             developer working on NodeJS and ReactJS.
           </Paragraph>
+          <Text>
+            Here are a few technologies I’ve been working with recently:
+          </Text>
+
+          <Box fontFamily="var(--chakra-fonts-mono)" fontSize="sm">
+            <List display="flex">
+              <StyledListItem w="200px">Javascript (ES6)</StyledListItem>
+              <StyledListItem w="200px">NodeJS</StyledListItem>
+            </List>
+            <List display="flex">
+              <StyledListItem w="200px">Typescript</StyledListItem>
+              <StyledListItem w="200px">React</StyledListItem>
+            </List>
+            <List display="flex">
+              <StyledListItem w="200px">Rust</StyledListItem>
+            </List>
+          </Box>
           <Box my={4}>
             <NextLink href="/works" passHref>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
