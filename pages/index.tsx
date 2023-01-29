@@ -19,6 +19,7 @@ import { BioSection, BioYear } from '@components/bio'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { IoLogoGithub } from 'react-icons/io'
 import React from 'react'
+import { StyledListItem } from '@components/styled-list-item'
 
 const LinkIcon = styled(Link)`
   position: relative;
@@ -54,7 +55,10 @@ const Page = () => {
             <Heading as="h2" variant="page-title">
               Nguyen Ho
             </Heading>
-            <p> A developer love to learn new things</p>
+            <p>
+              Hello! My name is Nguyen, I&apos;m a developer love to learn new
+              things
+            </p>
             <Box>
               <LinkIcon href="https://github.com/nguyen315" target="_blank">
                 <Icon
@@ -113,8 +117,23 @@ const Page = () => {
             Minh University, University of Science
           </BioSection>
           <BioSection>
-            <BioYear>2022 - Present</BioYear>
-            Work at Kobiton Vietnam
+            <BioYear>Jan 2022 - Jan 2023</BioYear>
+            Worked at Kobiton Vietnam
+            <List>
+              <StyledListItem>
+                Implemented features on backend with NodeJS and frontend with
+                ReactJS.
+              </StyledListItem>
+              <StyledListItem>
+                Designing and implementing feature webhook, using pub-sub
+                messages system Kafka for scalable and better performance on the
+                server.
+              </StyledListItem>
+              <StyledListItem>
+                Implementing an installer with Bash Script to help automate and
+                reduce the steps needed when installing Kobiton software.
+              </StyledListItem>
+            </List>
           </BioSection>
         </Section>
 
