@@ -6,7 +6,10 @@ export const BioSection = styled(Box)`
   text-indent: -3.4em;
 `
 
-export const BioYear = styled.span`
+export const BioYear = styled(Box)`
   font-weight: bold;
   margin-right: 1em;
+  display: inline-block;
+  text-indent: 0;
+  width: 150px;
 `

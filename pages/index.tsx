@@ -125,16 +125,18 @@ const Page = () => {
           </Heading>
           <BioSection>
             <BioYear>2000</BioYear>
-            Born in Vietnam
+            <Text display="inline">Born in Vietnam</Text>
           </BioSection>
           <BioSection>
             <BioYear>2022</BioYear>
-            Completed the Bachelor Program Of Software Engineering in the Ho Chi
-            Minh University, University of Science
+            <Text display="inline">
+              Completed the Bachelor Program Of Software Engineering in the Ho
+              Chi Minh University, University of Science
+            </Text>
           </BioSection>
           <BioSection>
             <BioYear>Jan 2022 - Jan 2023</BioYear>
-            Worked at Kobiton Vietnam
+            <Text display="inline">Worked at Kobiton Vietnam</Text>
             <List>
               <StyledListItem>
                 Implemented features on backend with NodeJS and frontend with
