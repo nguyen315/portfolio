@@ -108,6 +108,7 @@ const Page = () => {
             </List>
             <List display="flex">
               <StyledListItem w="200px">Rust</StyledListItem>
+              <StyledListItem w="200px">React Native</StyledListItem>
             </List>
           </Box>
           <Box my={4}>
@@ -123,20 +124,26 @@ const Page = () => {
           <Heading as="h3" variant="section-title">
             Bio
           </Heading>
-          <BioSection>
+          <BioSection marginBottom="0.5em">
             <BioYear>2000</BioYear>
-            <Text display="inline">Born in Vietnam</Text>
+            <Box display="block" style={{ textIndent: 0 }}>
+              Born in Vietnam
+            </Box>
           </BioSection>
-          <BioSection>
+          <BioSection marginBottom="0.5em">
             <BioYear>2022</BioYear>
-            <Text display="inline">
-              Completed the Bachelor Program Of Software Engineering in the Ho
-              Chi Minh University, University of Science
-            </Text>
+            <Box display="block" style={{ textIndent: 0 }}>
+              Completed the Bachelor Program Of Software Engineering in the HCM
+              University, University of Science
+            </Box>
           </BioSection>
-          <BioSection>
-            <BioYear>Jan 2022 - Jan 2023</BioYear>
-            <Text display="inline">Worked at Kobiton Vietnam</Text>
+          <Box marginBottom="0.5em">
+            <BioSection>
+              <BioYear>Jan 2022 - Jan 2023</BioYear>
+              <Box display="block" style={{ textIndent: 0 }}>
+                Fullstack Software Engineer at <b>Kobiton Vietnam </b>
+              </Box>
+            </BioSection>
             <List>
               <StyledListItem>
                 Implemented features on backend with NodeJS and frontend with
@@ -152,7 +159,15 @@ const Page = () => {
                 reduce the steps needed when installing Kobiton software.
               </StyledListItem>
             </List>
-          </BioSection>
+          </Box>
+          <Box>
+            <BioSection>
+              <BioYear>Feb 2022 - Present</BioYear>
+              <Box display="block" style={{ textIndent: 0 }}>
+                Mobile Software Engineer at <b>Employment Hero</b>
+              </Box>
+            </BioSection>
+          </Box>
         </Section>
 
         <Section delay={0.3}>

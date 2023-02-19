@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 export const BioSection = styled(Box)`
-  padding-left: 3.4em;
+  display: flex;
   text-indent: -3.4em;
 `
 
@@ -11,5 +11,6 @@ export const BioYear = styled(Box)`
   margin-right: 1em;
   display: inline-block;
   text-indent: 0;
-  width: 150px;
+  width: 170px;
+  min-width: 170px;
 `
