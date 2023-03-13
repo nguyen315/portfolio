@@ -162,7 +162,7 @@ const Page = () => {
           </Box>
           <Box>
             <BioSection>
-              <BioYear>Feb 2022 - Present</BioYear>
+              <BioYear>Feb 2023 - Present</BioYear>
               <Box display="block" style={{ textIndent: 0 }}>
                 Mobile Software Engineer at <b>Employment Hero</b>
               </Box>
