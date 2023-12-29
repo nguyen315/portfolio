@@ -18,7 +18,7 @@ import Paragraph from '@components/paragraph'
 import Layout from '@components/layouts/article'
 import { BioSection, BioYear } from '@components/bio'
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { IoLogoGithub } from 'react-icons/io'
+import { IoLogoGithub, IoLogoFacebook } from 'react-icons/io'
 import React from 'react'
 import { StyledListItem } from '@components/styled-list-item'
 
@@ -172,9 +172,24 @@ const Page = () => {
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            On the web
+            Interesting things
           </Heading>
           <List>
+            <ListItem>
+              The Tao of Programming <Link href="http://www.mit.edu/~xela/tao.html" target="_blank">http://www.mit.edu/~xela/tao.html</Link>
+            </ListItem>
+            <ListItem>
+              Find unused files, dependencies and exports in Javascript projects <Link href="https://github.com/webpro/knip" target="_blank">knip</Link>
+            </ListItem>
+          </List>
+        </Section>
+
+
+        <Section delay={0.4}>
+          <Heading as="h3" variant="section-title">
+            On the web
+          </Heading>
+          <List display='flex' flexDirection='row'>
             <ListItem>
               <Link href="https://github.com/nguyen315" target="_blank">
                 <Button
@@ -186,8 +201,21 @@ const Page = () => {
                 </Button>
               </Link>
             </ListItem>
+            <ListItem>
+              <Link href="https://www.facebook.com/hominhnguyen315/" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoFacebook} />}
+                >
+                  @hominhnguyen315
+                </Button>
+              </Link>
+            </ListItem>
           </List>
         </Section>
+
+
       </Container>
     </Layout>
   )
